@@ -14,7 +14,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <h1>Hello {user?.username}</h1>
-        <button onClick={signOut}>Sign out</button>
+        <button onClick={signOut}>Sign out!</button>
         <p>env</p>
         <p>{process.env.CONTENTS_BUCKET_NAME}</p>
         <p>{process.env.CONTENTS_URL}</p>
