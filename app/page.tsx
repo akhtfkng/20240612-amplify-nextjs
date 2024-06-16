@@ -3,7 +3,8 @@ import { Authenticator } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 import outputs from "../amplify_outputs.json";
-import Link from 'next/link'
+import Link from 'next/link';
+import Header from './components/header';
 
 Amplify.configure(outputs);
 
@@ -12,6 +13,7 @@ export default function Home() {
     <Authenticator>
     {({ signOut, user }) => (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Header />
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <h1>Hello {user?.username}</h1>
         <button onClick={signOut}>Sign out!</button>
