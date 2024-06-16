@@ -18,10 +18,12 @@ export const S3ListObjects = async () => {
 };
 
 export default async function Page() {
+  return (
     <>
       <h1>
         xcontents
       </h1>
       <p>{JSON.stringify(S3ListObjects)}</p>
     </>
+  );
 }
