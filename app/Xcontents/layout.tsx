@@ -1,4 +1,4 @@
-export default function XContentsLayout({
+export default function xcontentsLayout({
     children, // will be a page or nested layout
   }: {
     children: React.ReactNode
