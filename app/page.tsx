@@ -3,6 +3,7 @@ import { Authenticator } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 import outputs from "../amplify_outputs.json";
+import Link from 'next/link'
 
 Amplify.configure(outputs);
 
@@ -25,6 +26,8 @@ export default function Home() {
       </div>
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
       </div>
+      <Link href="/dashboard">Dashboard</Link>
+      <Link href="/dashboard/settings">Dashboard Settings</Link>
     </main>
     )}
     </Authenticator>

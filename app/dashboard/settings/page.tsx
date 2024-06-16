@@ -1,9 +1,9 @@
 'use client';
 
-export default function settings() {
+export default function Page() {
   return (
-    <div>
+    <h1>
       settings
-    </div>
+    </h1>
   );
 }
