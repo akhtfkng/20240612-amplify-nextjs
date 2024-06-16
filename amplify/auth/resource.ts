@@ -11,5 +11,11 @@ export const auth = defineAuth({
   multifactor: {
     mode: 'REQUIRED',
     totp: true
-  }
+  },
+  userAttributes: {
+    email: {
+      mutable: false,
+      required: true,
+    }
+  },
 });
