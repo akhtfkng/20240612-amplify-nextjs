@@ -28,6 +28,7 @@ export default function Home() {
       </div>
       <Link href="/dashboard">Dashboard</Link>
       <Link href="/dashboard/settings">Dashboard Settings</Link>
+      <Link href="/xcontents">XContents</Link>
     </main>
     )}
     </Authenticator>
