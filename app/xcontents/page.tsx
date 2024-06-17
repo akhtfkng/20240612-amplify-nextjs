@@ -1,4 +1,5 @@
 // 'use client';
+import Button from '@mui/material/Button';
 
 import { S3Client, ListObjectsV2Command } from "@aws-sdk/client-s3";
 
@@ -14,10 +15,8 @@ export default async function Page() {
   console.log(response);
   return (
     <>
-      <h1>
-        xcontents
-      </h1>
       <p>{JSON.stringify(response)}</p>
+      <Button variant="contained">Hello world</Button>;
     </>
   );
 }
