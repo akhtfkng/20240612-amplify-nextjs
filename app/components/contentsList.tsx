@@ -1,18 +1,41 @@
 'use client';
 
-import * as React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import React, { useState, useEffect } from 'react';
+import { list } from 'aws-amplify/storage';
 
-export default function contentsList() {
+const FileList = () => {
+  const [files, setFiles] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchFiles = async () => {
+      try {
+        const result = await list({
+          path: ''
+        });
+        setFiles(result.items); 
+      } catch (err) {
+        console.error(err);
+        setError(err.message);
+      }
+    };
+
+    fetchFiles();
+  }, []);
+
   return (
-    <>
-      <h1>Contetns</h1>
-      <p>CONTENTS_BUCKET_NAME : {process.env.CONTENTS_BUCKET_NAME}</p>
-      <p>CONTENTS_URL : {process.env.CONTENTS_URL}</p>
-    </>
+    <div>
+      <h1>File List</h1>
+      {error && <p>Error fetching files: {error}</p>}
+      <ul>
+        {files.map((file, index) => (
+          <li key={index}>
+            {file.path} - Last modified: {new Date(file.lastModified).toLocaleString()}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
-}
+};
+
+export default FileList;
