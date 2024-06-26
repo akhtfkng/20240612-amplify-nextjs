@@ -3,7 +3,7 @@ import { list } from 'aws-amplify/storage';
 export async function listFiles() {
     try {
         const result = await list({
-            path: ''
+            path: '/'
         });
         return result;
     } catch (error) {
