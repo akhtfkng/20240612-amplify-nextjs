@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { list } from 'aws-amplify/storage';
 
 const FileList = () => {
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState<any[]>([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
