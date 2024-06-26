@@ -1,24 +1,22 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { list } from 'aws-amplify/storage';
+import { listFiles } from '../lib/s3';
 
 const FileList = () => {
   const [files, setFiles] = useState<any[]>([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchFiles = async () => {
+    async function fetchFiles() {
       try {
-        const result = await list({
-          path: ''
-        });
-        setFiles(result.items); 
-      } catch (err:any) {
-        console.error(err);
-        setError(err.message);
+        const files:any = await listFiles();
+        setFiles(files);
+      } catch (error:any) {
+        console.error('Error fetching files:', error);
+        setError(error.message);
       }
-    };
+    }
 
     fetchFiles();
   }, []);
