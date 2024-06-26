@@ -14,7 +14,7 @@ const FileList = () => {
           path: ''
         });
         setFiles(result.items); 
-      } catch (err) {
+      } catch (err:any) {
         console.error(err);
         setError(err.message);
       }
