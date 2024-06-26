@@ -7,7 +7,8 @@ export async function listFiles() {
         });
         return result;
     } catch (error) {
-        console.error('Error listing files:', error);
-        throw error;
+        // console.error('Error listing files:', error);
+        // throw error;
+        return [];
     }
 }
