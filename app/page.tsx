@@ -17,6 +17,7 @@ export default function Home() {
       path: 'photos/',
       // Alternatively, path: ({identityId}) => `album/{identityId}/photos/`
     });
+    console.log(JSON.stringify(result));
   } catch (error) {
     console.log(error);
   }
