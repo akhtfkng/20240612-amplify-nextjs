@@ -13,6 +13,6 @@ const backend = defineBackend({
 backend.addOutput({
   storage: {
     aws_region: "us-east-1",
-    bucket_name: "amplify-contents-20240612"
+    bucket_name: "amplify-contents-20240612",
   },
 });
